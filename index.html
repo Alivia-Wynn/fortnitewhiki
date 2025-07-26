@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <!-- TODO: link style sheet --> 
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  </head>
+
+  <script>
+  const url = "https://fortnite-api.com/v2/news/br";
+
+  async function getFortniteNews() {
+    
+      const res = await fetch(url);
+      const result = await res.json();
+      const motds = result.data.motds;
+
+      const ticker = document.getElementById("newsTicker");
+
+      const newsContent = motds.map(item =>
+        `<a target="_blank"><strong>${item.title}:</strong> ${item.body}</a> <span class="dot mx-2">•</span>`
+      ).join('');
+
+      ticker.innerHTML = newsContent;
+    
+  }
+
+  getFortniteNews();
+</script>
+
+
+
+  </script>
+
+  <body>
+     <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+		body {
+  			background-image: url('fort.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed
+			}
+	</style> 
+	
+
+<audio id="myAudio">
+  <source src="assets/dance.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary" id="topNavBar">
+  <div class="container-fluid">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="lore.html">LORE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="play.html">PLAY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.twitch.tv/directory/category/fortnite">WATCH</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.fortnite.com/item-shop?lang=en-US">SHOP</a>
+
+          <!-- I want a button that changes the background photo -->
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" id="changing-img" onclick="changeImg()">Click Me!</button>
+          <!-- I want a button that changes the background photo -->
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-danger" onclick="playAudio()"> DO NOT Click Me!</button>
+
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!--https://bbbootstrap.com/snippets/bootstrap-scrolling-breaking-news-ticker-53214404-->
+
+<div class="fixed-bottom container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="d-flex justify-content-between align-items-center breaking-news bg-white">
+                <div class="d-flex flex-row flex-grow-1 flex-fill justify-content-center bg-danger py-2 text-white px-1 news"><span class="d-flex align-items-center">&nbsp;&#127918;Fortnite News </span></div>
+                <marquee class="news-scroll" behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();" id="newsTicker">  
+
+                    <!-- place holding -->
+
+                </marquee>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+  <script type="text/javascript" src="assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  </body>

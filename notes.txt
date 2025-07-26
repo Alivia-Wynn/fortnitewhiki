@@ -1,0 +1,5 @@
+fetch a request and revieve a response
+fetch is an async fxn so your response is a promise
+
+
+const url = 
