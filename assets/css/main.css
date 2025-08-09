@@ -26,20 +26,62 @@ background-color: white;
   height: 300px; /* Should be removed. Only for demonstration */
 }
 
-.imgColumn {
-  float: left;
-
-.txtColumn {
-  float: right;
+.animate__fadeIn {
+  --animate-duration: 3s;
 }
 
-.pc{
-  float: left;
+@font-face {
+  font-family: 'Fortnite';
+  src: url('../Fortnite.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-.playstation{
-  float: right;
+/* Target h1 inside #title */
+#title h1 {
+  font-family: 'Fortnite', sans-serif;
+  font-size: 5rem; /* big */
+  color: white;
+  -webkit-text-stroke: 2px black;
+  text-stroke: 2px black;
+  margin: 0;
 }
 
+/* Target the <p> by a class or id, or here by selector */
+.col-lg-8.align-self-baseline p {
+  font-size: 2rem;
+  color: white !important; /* override template colors https://www.w3schools.com/css/css_important.asp */
+  -webkit-text-stroke: .5px black;
+  text-stroke: .5px black;
+  margin-top: 0.5rem;
+}
 
+#tree{
+  width:100%;
+  height:100%;
+}
 
+/* Full-page background with image and tint */
+.background {
+    position: relative;
+    min-height: 100vh; /* full screen height */
+    background-image: url('../homescreen.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* The tint overlay */
+.background::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* top:0, right:0, bottom:0, left:0 */
+    background: rgba(0, 0, 0, 0.5); /* black tint at 50% opacity */
+    z-index: 0;
+}
+
+/* Ensure your page content sits above the tint */
+.background > * {
+    position: relative;
+    z-index: 1;
+}
