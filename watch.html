@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Who To Watch</title>
+    <!-- CSS style sheet --> 
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <!-- Boostrap style sheet --> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    
+	<!-- animate style sheet --> 
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- family tree api script --> 
+
+<script src="https://balkan.app/js/familytree.js"></script>
+	<style>
+        /* Give the tree container some size */
+        #tree {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
+</head>
+<body style="background-color: white"  ;>
+    <!-- Your content goes here -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="topNavBar">
+  <div class="container-fluid">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="lore.html">LORE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="play.html">PLAY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="watch.html">WATCH</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.fortnite.com/item-shop?lang=en-US">SHOP</a>
+
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="card text-white bg-secondary my-5 py-4 text-center">
+                <div class="card-body"><p class="text-white m-0">Before you jump into your first battle, check out theses popular Fortnite streamers!</p>
+                </div>
+            </div>
+ <div id="tree"></div>
+    <script>
+
+	    let family = new FamilyTree(document.getElementById("tree"), {
+	        // options
+	        nodeBinding: {
+	            field_0: "name",
+	            img_0: "img",        // Image
+            	field_1: "linkHtml"  // Link text
+	    },
+	        nodes: [
+            { id: 1, 
+            	pids: [2], 
+            	name: "HappyHappyGal", 
+            	gender: "female",
+             	img: "assets/hhg.jpg", //Image URL
+                linkHtml: "<a href='https://www.twitch.tv/happyhappygal' target='_blank'>Watch on twitch</a>"},
+            { id: 2,
+             	pids: [1], 
+         		name: "IceTalks", 
+         		gender: "male",
+             	img: "assets/ice.jpg", //Image URL
+                linkHtml: "<a href='https://www.twitch.tv/icetalks' target='_blank'>Watch on twitch</a>"},
+            { id: 3, 
+            	mid: 1, 
+            	fid: 2, 
+            	name: "Prospering", 
+            	gender: "male" ,
+             	img: "assets/prospering.jpg", //Image URL
+                linkHtml: "<a href='https://www.twitch.tv/prospering' target='_blank'>Watch on twitch</a>"},
+            { id: 4, 
+            	mid: 1, 
+            	fid: 2, 
+            	name: "Clix", 
+            	gender: "male",
+             	img: "assets/clix.jpg", //Image URL
+                linkHtml: "<a href='https://www.twitch.tv/clix' target='_blank'>Watch on twitch</a>" },
+            { id: 5, 
+            	mid: 1, 
+            	fid: 2, 
+            	name: "Nick Eh 30", 
+            	gender: "male" ,
+             	img: "assets/ne3.jpg", //Image URL
+                linkHtml: "<a href='https://www.twitch.tv/nickeh30' target='_blank'>Watch on twitch</a>"},
+            { id: 6, 
+            	mid: 1, 
+            	fid: 2, 
+            	name: "Chica",
+            	gender: "female",
+            	img: "assets/chica.jpg", //Image URL
+                linkHtml: "<a href='https://www.twitch.tv/chica' target='_blank'>Watch on twitch</a>" }
+        ]
+	    });
+	 
+	</script> 
+
+
+ 
+
+
+</body>
+</html>
+
